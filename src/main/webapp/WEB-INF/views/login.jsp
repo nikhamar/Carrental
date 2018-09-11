@@ -6,7 +6,7 @@
 <body>
 
 <div class="w3-container">
-    <h2>Fasak Car Rental</h2>
+    <h2> Car Rental</h2>
 
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large">Login</button>
 
@@ -18,7 +18,7 @@
                 <img src="friendly-agents.jpg" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
             </div>
 
-            <form class="w3-container" action="/action_page.php">
+            <form class="w3-container" action="/">
                 <div class="w3-section">
                     <label><b>Username</b></label>
                     <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="userName" required>

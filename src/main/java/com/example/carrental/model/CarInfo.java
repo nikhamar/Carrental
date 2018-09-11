@@ -3,11 +3,12 @@ package com.example.carrental.model;
 public class CarInfo {
     public String carType;
     public String carName;
-    public String passengerCap;
+    public int passengerCap;
     public String gearType;
     public int baggage;
 
-    public CarInfo(String carType, String carName, String passengerCap, String gearType, int baggage) {
+
+    public CarInfo(String carType, String carName, int passengerCap, String gearType, int baggage) {
         this.carType = carType;
         this.carName = carName;
         this.passengerCap = passengerCap;
@@ -34,11 +35,11 @@ public class CarInfo {
         this.carName = carName;
     }
 
-    public String getPassengerCap() {
+    public int getPassengerCap() {
         return passengerCap;
     }
 
-    public void setPassengerCap(String passengerCap) {
+    public void setPassengerCap(int passengerCap) {
         this.passengerCap = passengerCap;
     }
 
