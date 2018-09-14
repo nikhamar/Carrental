@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +15,25 @@
 <div class="header">
     <a href="#default" class="logo">Car Rental</a>
     <div class="header-right">
-        <a class="active" href="#home">Home</a>
-        <a href="#login">Login</a>
-        <a href="#sign-up">Sign Up</a>
+        <a class="active" href="/">Home</a>
+        <a href="/Login">Login</a>
+        <a href="/Registration">Sign Up</a>
     </div>
 </div>
 
-<form action="/action_page.php">
+<form action="/traveldetails" >
 
     <div class="container">
-        <label for="loction"></label>
-        <input type="text" placeholder="choose location" name="location" required>
-        <label for="pickup"><b>pickup date</b></label>
-        <input type="date" placeholder="DD MM YYYY" name="pickupdate" required>
-        <label for="dropoff"><b>dropoff date</b></label>
-        <input type="date" placeholder="DD MM YYYY" name="dropoffdate" required>
+        <label><b>pickuploction</b></label>
+        <input type="text" placeholder="choose location" name="pickuplocation" required>
+        <label><b>dropoffloction</b></label>
+        <input type="text" placeholder="choose location" name="dropofflocation" required>
+        <label><b>pickup date</b></label>
+        <input type="text" placeholder="DD MM YYYY" name="pickupDate" required>
+        <label><b>dropoff date</b></label>
+        <input type="text" placeholder="DD MM YYYY" name="dropOffDate" required>
 
-        <label for="age"><b>Age </b></label>
+        <label><b>Age </b></label>
         <input type="number" placeholder="enter age" name="age" required>
         <button type="submit">Search Now</button>
     </div>

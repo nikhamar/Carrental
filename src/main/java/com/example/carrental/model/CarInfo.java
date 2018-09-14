@@ -5,15 +5,16 @@ public class CarInfo {
     public String carName;
     public int passengerCap;
     public String gearType;
-    public int baggage;
+    public int caramount;
 
 
-    public CarInfo(String carType, String carName, int passengerCap, String gearType, int baggage) {
+    public CarInfo(String carType, String carName, int passengerCap, String gearType, int caramount) {
+
         this.carType = carType;
         this.carName = carName;
         this.passengerCap = passengerCap;
         this.gearType = gearType;
-        this.baggage = baggage;
+        this.caramount = caramount;
     }
 
     public CarInfo() {
@@ -51,11 +52,11 @@ public class CarInfo {
         this.gearType = gearType;
     }
 
-    public int getBaggage() {
-        return baggage;
+    public int getCaramount() {
+        return caramount;
     }
 
-    public void setBaggage(int baggage) {
-        this.baggage = baggage;
+    public void setCaramount(int caramount) {
+        this.caramount = caramount;
     }
 }

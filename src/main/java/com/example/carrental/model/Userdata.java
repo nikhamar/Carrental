@@ -1,22 +1,28 @@
 package com.example.carrental.model;
 
-public class TravelInfo {
+public class Userdata {
 
     public String pickuplocation;
     public String dropofflocation;
     public String pickupDate;
     public String dropOffDate;
     public int age;
+    public String userName;
+    public String carType;
+    public int caramount;
 
-    public TravelInfo() {
-    }
-
-    public TravelInfo(String pickuplocation, String dropofflocation, String pickupDate, String dropOffDate, int age) {
+    public Userdata(String pickuplocation, String dropofflocation, String pickupDate, String dropOffDate, int age, String userName, String carType, int caramount) {
         this.pickuplocation = pickuplocation;
         this.dropofflocation = dropofflocation;
         this.pickupDate = pickupDate;
         this.dropOffDate = dropOffDate;
         this.age = age;
+        this.userName = userName;
+        this.carType = carType;
+        this.caramount = caramount;
+    }
+
+    public Userdata() {
     }
 
     public String getPickuplocation() {
@@ -57,5 +63,29 @@ public class TravelInfo {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getCarType() {
+        return carType;
+    }
+
+    public void setCarType(String carType) {
+        this.carType = carType;
+    }
+
+    public int getCaramount() {
+        return caramount;
+    }
+
+    public void setCaramount(int caramount) {
+        this.caramount = caramount;
     }
 }
