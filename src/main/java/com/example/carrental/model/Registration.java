@@ -1,22 +1,30 @@
 package com.example.carrental.model;
 
-public class Registration {
+import javax.validation.constraints.NotNull;
 
+public class Registration {
+    @NotNull(message = "First Name should not be null")
     public String firstName;
+    @NotNull(message = "Last Name should not be null")
     public String lastName;
+
     public String gender;
+    @NotNull(message = "Email should not be null")
     public String email;
-    public String phone;
+
+    @NotNull
     public String userName;
+    @NotNull
     public String password;
 
 
-    public Registration(String firstName, String lastName, String gender, String email, String phone, String userName, String password) {
+    public Registration(String firstName, String lastName, String gender, String email,
+                        String userName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.email = email;
-        this.phone = phone;
+
         this.userName = userName;
         this.password = password;
     }
@@ -56,13 +64,7 @@ public class Registration {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
-    }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
     public String getUserName() {
         return userName;

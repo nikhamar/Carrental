@@ -3,16 +3,16 @@ package com.example.carrental.model;
 public class CarInfo {
     public String carType;
     public String carName;
-    public String passengerCap;
+    public int passengerCap;
     public String gearType;
-    public int baggage;
+    public int caramount;
 
-    public CarInfo(String carType, String carName, String passengerCap, String gearType, int baggage) {
+    public CarInfo(String carType, String carName, int passengerCap, String gearType, int caramount) {
         this.carType = carType;
         this.carName = carName;
         this.passengerCap = passengerCap;
         this.gearType = gearType;
-        this.baggage = baggage;
+        this.caramount = caramount;
     }
 
     public CarInfo() {
@@ -34,11 +34,11 @@ public class CarInfo {
         this.carName = carName;
     }
 
-    public String getPassengerCap() {
+    public int getPassengerCap() {
         return passengerCap;
     }
 
-    public void setPassengerCap(String passengerCap) {
+    public void setPassengerCap(int passengerCap) {
         this.passengerCap = passengerCap;
     }
 
@@ -50,11 +50,11 @@ public class CarInfo {
         this.gearType = gearType;
     }
 
-    public int getBaggage() {
-        return baggage;
+    public int getCaramount() {
+        return caramount;
     }
 
-    public void setBaggage(int baggage) {
-        this.baggage = baggage;
+    public void setCaramount(int caramount) {
+        this.caramount = caramount;
     }
 }
