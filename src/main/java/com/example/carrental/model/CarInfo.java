@@ -7,7 +7,9 @@ public class CarInfo {
     public String gearType;
     public int caramount;
 
+
     public CarInfo(String carType, String carName, int passengerCap, String gearType, int caramount) {
+
         this.carType = carType;
         this.carName = carName;
         this.passengerCap = passengerCap;
