@@ -24,7 +24,15 @@ public class HomeController {
     @RequestMapping(value = "/")
     public ModelAndView viewHomePage() {
 
-        ModelAndView modelAndView = new ModelAndView("home");
+        ModelAndView modelAndView = new ModelAndView("home1");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/Loginhome")
+    public ModelAndView viewLoginHomePage() {
+
+        ModelAndView modelAndView = new ModelAndView("loginhome");
         return modelAndView;
 
     }
