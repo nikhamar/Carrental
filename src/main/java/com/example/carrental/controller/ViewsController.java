@@ -65,19 +65,21 @@ public ModelAndView paymentInfo(@ModelAttribute CarInfo carInfo, @ModelAttribute
 
 }
 
-@RequestMapping(value = "/confirmbooking")
+@RequestMapping(value = "/confirmbooking", method =RequestMethod.POST)
 public  ModelAndView confirmBooking(@ModelAttribute Userdata  userdata, @ModelAttribute PaymentInfo paymentInfo){
+
+    System.out.println(userdata.caramount);
         ModelAndView modelAndView=new ModelAndView("booking");
-    ResponseEntity<PaymentInfo[]> responseEntity=
-            restTemplate.postForEntity("http://localhost:8080/payments", paymentInfo,PaymentInfo[].class);
+    ResponseEntity<PaymentInfo> responseEntity=
+            restTemplate.postForEntity("http://localhost:8080/payments", paymentInfo,PaymentInfo.class);
     int statusCode= responseEntity.getStatusCodeValue();
     if(statusCode >=200 && statusCode<=299){
         System.out.println("Payment details uploaded succesfully ");
     }else {
         System.out.println("internal server error");
     }
-    ResponseEntity<Userdata[]> responseEntity1=
-            restTemplate.postForEntity("http://localhost:8080/travelinfo", userdata,Userdata[].class);
+    ResponseEntity<Userdata> responseEntity1=
+            restTemplate.postForEntity("http://localhost:8080/travelinfo", userdata,Userdata.class);
     int statusCode1= responseEntity1.getStatusCodeValue();
     if(statusCode1 >=200 && statusCode1<=299){
         System.out.println(" reservation details uploaded succesfully ");
@@ -91,9 +93,13 @@ public  ModelAndView confirmBooking(@ModelAttribute Userdata  userdata, @ModelAt
     modelAndView.addObject("age",userdata.getAge());
     modelAndView.addObject("cartype",userdata.getCarType());
     modelAndView.addObject("caramount",userdata.getCaramount());
+    modelAndView.addObject("username",paymentInfo.getUserName());
+
 
     System.out.println(userdata.caramount + userdata.dropOffDate+ userdata.age);
         return modelAndView;
 }
-
+  public  ModelAndView viewBookings(){
+return  new ModelAndView();
+  }
 }

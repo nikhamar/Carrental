@@ -14,8 +14,9 @@ public class Loginservice {
     public Boolean validatelogin(Registration registration){
 
         ResponseEntity<Registration> responseEntity=restTemplate.postForEntity("http://localhost:8080/user", registration, Registration.class);
-
-        return (registration.getUserName().equals(responseEntity.getBody().getUserName()) && registration.getPassword().equals(responseEntity.getBody().getPassword()));
+        System.out.println(responseEntity.getBody().getUserName()+ responseEntity.getBody().getPassword());
+        return (registration.getUserName().equals(responseEntity.getBody().getUserName()) &&
+                registration.getPassword().equals(responseEntity.getBody().getPassword()));
 
     }
 }

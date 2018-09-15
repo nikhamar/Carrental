@@ -25,16 +25,17 @@ public class RegistrationController {
     @RequestMapping(value = "/Registrationdetails", method = RequestMethod.POST)
     public ModelAndView registerdetails(@Valid @ModelAttribute Registration registration, Errors errors)
     {
+        System.out.println(registration.getUserName()+registration.getEmail());
 
-        if(errors.hasErrors()){
-
-        ModelAndView modelAndView= new ModelAndView("registration");
-        modelAndView.addObject("error", errors.getAllErrors());
-        return modelAndView;
-    }
+//        if(errors.hasErrors()){
+//
+//        ModelAndView modelAndView= new ModelAndView("registration");
+//        modelAndView.addObject("error", errors.getAllErrors());
+//        return modelAndView;
+//    }
         ModelAndView modelAndView= new ModelAndView();
-        ResponseEntity<Registration[]> responseEntity=
-                restTemplate.postForEntity("http://localhost:8080/users", registration,Registration[].class);
+        ResponseEntity<Registration> responseEntity=
+                restTemplate.postForEntity("http://localhost:8080/users", registration,Registration.class);
 
         int statusCode= responseEntity.getStatusCodeValue();
 
@@ -43,7 +44,7 @@ public class RegistrationController {
             return  new ModelAndView("login");
         }else{
             System.out.println("internal server error");
-            modelAndView.setViewName("home");
+            modelAndView.setViewName("home1");
             return modelAndView;
         }
 
